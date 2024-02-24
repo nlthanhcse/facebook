@@ -21,6 +21,7 @@
         <module>notification-service</module>
         <module>common-service</module>
         <module>post-service</module>
+        <module>auth-service</module>
     </modules>
     <properties>
         <java.version>17</java.version>
