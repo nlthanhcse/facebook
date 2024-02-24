@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
 
 eureka:
@@ -20,3 +20,6 @@ eureka:
       defaultZone: http://localhost:8082/eureka/
   instance:
     preferIpAddress: true
+
+jwt:
+  secretKey: 34591bfaaf63a3690e90a5c83caf4c7b0b04fb7933e0cb844395ba817a97d2da
