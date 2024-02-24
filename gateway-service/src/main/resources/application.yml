@@ -2,12 +2,29 @@ server:
   port: 8081
 
 spring:
+  main:
+    web-application-type: reactive
   application:
     name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/user/**
+        - id: post-service
+          uri: lb://post-service
+          predicates:
+            - Path=/api/v1/post/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/v1/notification/**
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8082/eureka
+      defaultZone: http://localhost:8082/eureka/
   instance:
     preferIpAddress: true
