@@ -1,5 +1,6 @@
 server:
   port: 8081
+  forward-headers-strategy: framework
 
 spring:
   main:
@@ -13,25 +14,25 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/v1/user/**
+            - Path=/api/v1/user/**, /v3/api-docs/user
 
         # post-service
         - id: post-service
           uri: lb://post-service
           predicates:
-            - Path=/api/v1/post/**
+            - Path=/api/v1/post/**, /v3/api-docs/post
 
         # notification-service
         - id: notification-service
           uri: lb://notification-service
           predicates:
-            - Path=/api/v1/notification/**
+            - Path=/api/v1/notification/**, /v3/api-docs/notification
 
         # auth-service
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/api/v1/auth/**
+            - Path=/api/v1/auth/**, /v3/api-docs/auth
 
 eureka:
   client:

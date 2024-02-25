@@ -27,3 +27,6 @@ Each service will be a module and is managed by parent folder (in parent pom fil
 #### Databases
     auth-service: 
         docker run -d -p 3306:3306 -v /etc/docker/mysql:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD= -e MYSQL_DATABASE=facebook -e MYSQL_USER= -e MYSQL_PASSWORD= --name mysql mysql
+
+### Centralized API Specification
+**[Swagger](http://localhost:8081/webjars/swagger-ui/index.html)**

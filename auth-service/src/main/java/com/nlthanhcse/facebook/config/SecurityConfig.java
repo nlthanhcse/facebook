@@ -20,7 +20,9 @@ public class SecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
     private final List<String> PERMIT_ENDPOINTS = Arrays.asList(
             "/api/v1/auth/signup",
-            "/api/v1/auth/login"
+            "/api/v1/auth/login",
+            "/swagger-ui/**",
+            "/v3/api-docs/**"
     );
 
     public SecurityConfig(AuthenticationProvider authenticationProvider, JwtAuthFilter jwtAuthFilter) {
